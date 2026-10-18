@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comics &amp; Brics | The Hub for Comics, Games, Lego and Food</title>
+<meta name="description" content="Comics &amp; Brics: thousands of comics, hundreds of board games, a dedicated Lego room and a themed kitchen under one roof. Build, read, play and eat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="shell">
+<aside class="rail" id="rail">
+  <a class="rlogo" href="#home" data-link aria-label="Comics and Brics home">
+    <span class="rbrick" aria-hidden="true"><i></i><i></i></span>
+    <span class="rname">Comics<br>&amp; Brics</span>
+  </a>
+  <nav class="rnav" id="rnav" aria-label="Main">
+    <a href="#home" data-link data-nav="home"><i style="--c:#e3000b"></i>Home</a>
+    <a href="#library" data-link data-nav="library"><i style="--c:#0055bf"></i>Library</a>
+    <a href="#build" data-link data-nav="build"><i style="--c:#ffd500"></i>Build</a>
+    <a href="#eat" data-link data-nav="eat"><i style="--c:#237841"></i>Eat</a>
+    <a href="#visit" data-link data-nav="visit"><i style="--c:#f57c00"></i>Visit</a>
+  </nav>
+  <div class="status" id="status" aria-live="polite">
+    <span class="dot" id="stDot"></span>
+    <div><b id="stText">Checking...</b><small id="stSub"></small></div>
+  </div>
+</aside>
+
+<div class="content">
+<main>
+
+<!-- ================= HOME ================= -->
+<section class="page" id="page-home" data-page="home">
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-in">
+      <p class="chip-y">Cafe. Comics. Games. Lego.</p>
+      <h1>Four hobbies.<br>One big table.</h1>
+      <p class="lead">Comics &amp; Brics is a social hub with thousands of comics, hundreds of board games, a dedicated Lego room and a kitchen that names every dish after a story.</p>
+      <div class="btns">
+        <button class="btn b-red" data-go="visit">Reserve a table</button>
+        <button class="btn b-glass" data-go="build">Try the brick builder</button>
+      </div>
+    </div>
+    <div class="today" id="today">
+      <p class="t-h">Today at the hub</p>
+      <h2 id="todayTitle"></h2>
+      <p id="todayText"></p>
+    </div>
+  </div>
+
+  <section class="sec">
+    <h2 class="h2">Pick a zone</h2>
+    <div class="zones">
+      <button class="zone z-red" data-go="library"><span class="studs"></span><strong>Comics wall</strong><span>Thousands of issues and volumes, from superheroes to manga.</span></button>
+      <button class="zone z-blue" data-go="library" data-focus="games"><span class="studs"></span><strong>Table games</strong><span>Hundreds of boxes. Our game finder picks one for your group.</span></button>
+      <button class="zone z-yellow" data-go="build"><span class="studs"></span><strong>Lego room</strong><span>A dedicated room of bricks. Build with us or book a session.</span></button>
+      <button class="zone z-green" data-go="eat"><span class="studs"></span><strong>The kitchen</strong><span>Build a combo meal, then eat it with your hands full of cards.</span></button>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2">A day at the hub</h2>
+    <ol class="day">
+      <li><b>11 am</b><div><h3>Quiet reading</h3><p>The comics wall is calm. Grab a coffee and a long series.</p></div></li>
+      <li><b>3 pm</b><div><h3>Builders arrive</h3><p>Lego room sessions start and the table games warm up.</p></div></li>
+      <li><b>7 pm</b><div><h3>Game night</h3><p>Leagues, swaps and loud laughter around the long tables.</p></div></li>
+      <li><b>10 pm</b><div><h3>Last orders</h3><p>One more round, one more issue, one more brownie.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2">Inside the hub</h2>
+    <p class="sub">Tap a photo to see it bigger.</p>
+    <div class="gal" id="gal">
+      <button class="gi g1" data-i="0"><img src="interior.jpg" alt="Visitor reading a comic in front of tall comic shelves" loading="lazy"></button>
+      <button class="gi g2" data-i="1"><img src="comics.jpg" alt="A spread of colourful comic book covers" loading="lazy"></button>
+      <button class="gi g3" data-i="2"><img src="board-game-2.jpg" alt="Big board game laid out across a cafe table" loading="lazy"></button>
+      <button class="gi g4" data-i="3"><img src="board-game-1.jpg" alt="Dice game with stained glass boards and colourful dice" loading="lazy"></button>
+    </div>
+  </section>
+
+  <section class="band">
+    <h2>Come for one thing. Stay for all four.</h2>
+    <button class="btn b-yellow" data-go="visit">Plan your visit</button>
+  </section>
+</section>
+
+<!-- ================= LIBRARY ================= -->
+<section class="page" id="page-library" data-page="library">
+  <div class="head head-lib"><h1>The library</h1><p>Browse the comics wall by spine, then let the game finder pick tonight's board game.</p></div>
+
+  <section class="sec" id="sec-comics">
+    <h2 class="h2s">Comics wall</h2>
+    <div class="ctools">
+      <label class="field"><span class="sr">Search comics</span><input type="search" id="sSearch" placeholder="Search by title"></label>
+      <div class="pills" id="sPills" role="group" aria-label="Genre"></div>
+      <button class="btn b-blue sm" id="sRandom">Surprise me</button>
+    </div>
+    <div class="shelf-wrap"><div class="shelf" id="shelf" role="list"></div></div>
+    <div class="detail" id="detail" aria-live="polite">
+      <p class="d-hint">Tap a spine to see the story.</p>
+    </div>
+    <p class="fine">Sample titles shown for preview. The real collection is confirmed by the cafe.</p>
+  </section>
+
+  <section class="sec" id="sec-games">
+    <h2 class="h2s">Game finder</h2>
+    <div class="finder">
+      <div class="fgroup"><p class="fl">How many players?</p>
+        <div class="pills" id="fPlayers" role="group" aria-label="Players">
+          <button type="button" class="pill on" data-v="2" aria-pressed="true">1 to 2</button>
+          <button type="button" class="pill" data-v="4" aria-pressed="false">3 to 4</button>
+          <button type="button" class="pill" data-v="6" aria-pressed="false">5 to 6</button>
+          <button type="button" class="pill" data-v="8" aria-pressed="false">7 or more</button>
+        </div></div>
+      <div class="fgroup"><p class="fl">What's the vibe?</p>
+        <div class="pills" id="fVibe" role="group" aria-label="Vibe">
+          <button type="button" class="pill on" data-v="any" aria-pressed="true">Surprise me</button>
+          <button type="button" class="pill" data-v="quick" aria-pressed="false">Quick</button>
+          <button type="button" class="pill" data-v="brainy" aria-pressed="false">Brainy</button>
+          <button type="button" class="pill" data-v="party" aria-pressed="false">Party</button>
+          <button type="button" class="pill" data-v="coop" aria-pressed="false">Co-op</button>
+        </div></div>
+    </div>
+    <p class="count" id="fCount" aria-live="polite"></p>
+    <div class="gl" id="gl"></div>
+    <p class="fine">Sample games for preview.</p>
+  </section>
+</section>
+
+<!-- ================= BUILD ================= -->
+<section class="page" id="page-build" data-page="build">
+  <div class="head head-build"><h1>Build</h1><p>Doodle with bricks right here, then book a real session in our dedicated Lego room.</p></div>
+
+  <section class="sec">
+    <h2 class="h2s">Brick builder</h2>
+    <p class="sub">Click or drag on the baseplate to place bricks. Your build is saved on this device.</p>
+    <div class="builder">
+      <div class="bpanel">
+        <div class="palette" id="palette" role="group" aria-label="Brick colour"></div>
+        <div class="tools">
+          <button type="button" class="btn b-white sm" id="bUndo">Undo</button>
+          <button type="button" class="btn b-white sm" id="bSurprise">Surprise me</button>
+          <button type="button" class="btn b-white sm" id="bClear">Clear</button>
+          <button type="button" class="btn b-red sm" id="bSave">Download picture</button>
+        </div>
+        <p class="bcount">Bricks placed: <b id="bCount">0</b></p>
+      </div>
+      <canvas id="canvas" width="800" height="480" aria-label="Brick baseplate. Click to place bricks."></canvas>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Book the Lego room</h2>
+    <p class="sub">Pick a day and a one-hour session. Spots left change by day.</p>
+    <div class="lego">
+      <div class="lcol">
+        <div class="field"><label for="lDate">Date</label><input type="date" id="lDate"></div>
+        <div class="field"><span class="lbl">Session</span>
+          <div class="slots" id="lSlots" role="group" aria-label="Sessions"></div>
+          <small class="er" id="eSlot"></small></div>
+        <div class="field"><span class="lbl">Builders</span>
+          <div class="stepper"><button type="button" id="lm" aria-label="Fewer builders">&minus;</button><output id="lc">2</output><button type="button" id="lp" aria-label="More builders">+</button></div>
+          <small class="er" id="eBuild"></small></div>
+        <div class="field"><span class="lbl">Style</span>
+          <div class="pills" id="lStyle" role="group" aria-label="Session style">
+            <button type="button" class="pill on" data-v="Free build" aria-pressed="true">Free build</button>
+            <button type="button" class="pill" data-v="Challenge build" aria-pressed="false">Challenge build</button>
+            <button type="button" class="pill" data-v="Little builders" aria-pressed="false">Little builders</button>
+          </div></div>
+        <button type="button" class="btn b-red wide" id="lHold">Hold my spot</button>
+      </div>
+      <div class="lbox">
+        <h3>What's in the room</h3>
+        <ul class="ticks">
+          <li>Walls of bricks sorted by colour</li>
+          <li>Build tables for solo and group play</li>
+          <li>Display shelves for finished models</li>
+          <li>Helpers for little builders</li>
+        </ul>
+        <p class="fine">Sample session details for preview.</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= EAT ================= -->
+<section class="page" id="page-eat" data-page="eat">
+  <div class="head head-eat"><h1>Eat</h1><p>Build a combo, brick by brick. Pick one from each row and watch the total grow.</p></div>
+  <section class="sec">
+    <div class="combo">
+      <div class="crow"><h2 class="h3">1. Pick a main</h2><div class="opts" id="cMain" role="radiogroup" aria-label="Main"></div></div>
+      <div class="crow"><h2 class="h3">2. Pick a side</h2><div class="opts" id="cSide" role="radiogroup" aria-label="Side"></div></div>
+      <div class="crow"><h2 class="h3">3. Pick a drink</h2><div class="opts" id="cDrink" role="radiogroup" aria-label="Drink"></div></div>
+      <div class="crow"><h2 class="h3">4. Add a sweet (optional)</h2><div class="opts" id="cSweet" role="radiogroup" aria-label="Sweet"></div></div>
+    </div>
+    <aside class="stack" id="stack" aria-label="Your combo">
+      <h2>Your stack</h2>
+      <ul id="stackList"></ul>
+      <p class="stack-empty" id="stackEmpty">Pick a main to start your stack.</p>
+      <div class="total"><span>Total</span><b id="stackTotal">&#8377;0</b></div>
+      <label class="lbl" for="stackName">Name or table</label>
+      <input type="text" id="stackName" placeholder="e.g. Aryan, long table">
+      <button type="button" class="btn b-green wide" id="stackSend">Send on WhatsApp</button>
+      <button type="button" class="btn b-white wide sm" id="stackReset">Start over</button>
+    </aside>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Full menu</h2>
+    <div class="menu" id="fullMenu"></div>
+    <p class="fine">Sample menu and prices shown for preview. Final menu is confirmed by the cafe.</p>
+  </section>
+</section>
+
+<!-- ================= VISIT ================= -->
+<section class="page" id="page-visit" data-page="visit">
+  <div class="head head-visit"><h1>Visit</h1><p>Reserve a table, join the Hub Pass, or find out how to get to us.</p></div>
+
+  <section class="sec vgrid">
+    <form class="res" id="resForm" novalidate>
+      <h2 class="h2s">Reserve a table</h2>
+      <div class="two">
+        <div class="field"><label for="rDate">Date</label><input type="date" id="rDate"><small class="er" id="eRDate"></small></div>
+        <div class="field"><label for="rTime">Time</label><select id="rTime"></select><small class="er" id="eRTime"></small></div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="rGuests">Guests</label><select id="rGuests"></select></div>
+        <div class="field"><label for="rZone">Where would you like to sit?</label>
+          <select id="rZone"><option>Anywhere</option><option>Near the comics wall</option><option>Long game table</option><option>Close to the Lego room</option></select></div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="rName">Name</label><input type="text" id="rName" autocomplete="name"><small class="er" id="eRName"></small></div>
+        <div class="field"><label for="rPhone">Mobile number</label><input type="tel" id="rPhone" inputmode="numeric" placeholder="10 digits" autocomplete="tel"><small class="er" id="eRPhone"></small></div>
+      </div>
+      <div class="field"><label for="rNote">Notes (optional)</label><textarea id="rNote" rows="3" placeholder="Birthday, kids, favourite game"></textarea></div>
+      <button type="submit" class="btn b-red wide">Reserve my table</button>
+    </form>
+    <aside class="info">
+      <h2 class="h2s">Find the hub</h2>
+      <p class="addr">Comics &amp; Brics Cafe<br>12 Sample Street<br>Your City 000000</p>
+      <p><strong>Open daily</strong><br>11 am to 11 pm</p>
+      <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+      <p class="fine">Address, phone and hours are sample details for preview.</p>
+    </aside>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Hub Pass</h2>
+    <p class="sub">A monthly pass for regulars. Sample plans for preview.</p>
+    <div class="passes" id="passes"></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Good to know</h2>
+    <div class="faq" id="faq"></div>
+  </section>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div><p class="foot-logo">Comics &amp; Brics</p><p>Comics, board games, a Lego room and good food. Stack your story with us.</p></div>
+  <p class="copy">&copy; 2026 Comics &amp; Brics. Website preview.</p>
+</footer>
+</div>
+</div>
+
+<div class="lb" id="lb" hidden>
+  <button type="button" class="lb-x" id="lbX" aria-label="Close photo">&times;</button>
+  <button type="button" class="lb-n lb-p" id="lbP" aria-label="Previous photo">&#8249;</button>
+  <img id="lbImg" alt="">
+  <button type="button" class="lb-n lb-nx" id="lbN" aria-label="Next photo">&#8250;</button>
+</div>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+    <button type="button" class="dx" id="dClose" aria-label="Close">&times;</button>
+    <div id="dBody"></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
